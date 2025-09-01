@@ -721,7 +721,7 @@ function addFilteredData(feature){
         .setLngLat([longitude, latitude])
         .setHTML(`
             <div class="popup" style="font-size: 12px;">
-                <div style="width: 100%; height: 150px; border-radius: 8px 8px 0 0; background: url('${feature.properties.img}');"></div>
+                <div style="width: 100%; height: 150px; border-radius: 8px 8px 0 0; background: url('${feature.properties.img}'); background-size: cover;"></div>
                 <h5>${feature.properties["name"]}</h5>
                 <p>The office is located at the top floor, please use the stairway to get upstairs.</p>
             </div>`) // Tooltip content
@@ -731,7 +731,7 @@ function addFilteredData(feature){
         .setLngLat([longitude, latitude])
         .setHTML(`
             <div class="popup" style="font-size: 12px;">
-                <div style="width: 100%; height: 150px; border-radius: 8px 8px 0 0; background: url('${feature.properties.img}');"></div>
+                <div style="width: 100%; height: 150px; border-radius: 8px 8px 0 0; background: url('${feature.properties.img}'); background-size: cover;"></div>
                 <h5>${feature.properties["name"]}</h5>
                 <p>The office is located on the ground floor, there is no need to use the stairway.</p>
             </div>`) // Tooltip content
