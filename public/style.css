@@ -1,0 +1,810 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+}
+
+.logo-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20%;
+    margin-left: 15px;
+}
+
+.logo-container h5 {
+    font-size: 12px;
+    width: 70%;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.logo {
+    width: 20%;
+}
+
+.logos-container {
+    width: 100%;
+    margin-bottom: 25px;
+}
+/* @media only screen and (max-width: 800px){
+    .info-box {
+        font-size: 3px;
+    }
+    .logo-container {
+        display: none;
+    }
+
+} */
+
+
+#main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.left-pane {
+    width: 28%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #cce5ff1f;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+}
+
+.sat-btn {
+    height: 24px;
+}
+
+
+.tabs {
+    position: absolute;
+    top: 3;
+    display: flex;
+    gap: 15px;
+    padding: 0 5px;
+    margin-bottom: 55%;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.tab {
+    width: 50px;
+    max-width: 50px;
+    flex: 1;
+    padding: 3px;
+    background: #fff;
+    color: #8B4513;
+    border: 1px solid #8B4513;
+    cursor: pointer;
+    text-align: center;
+    border-radius: 8px;
+    box-sizing: border-box;
+    z-index: 2;
+}
+
+.tab.active {
+    background: #8B4513;
+    color: #fff;
+}
+
+
+.tab-content {
+    display: none;
+    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+
+.tab-content.active {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+#map {
+    width: 80%;
+    height: 100%;
+}
+
+label {
+    display: block;
+    margin: 0 0 8px;
+}
+
+.search, .routing-container button {
+    width: 100%;
+    height: 45px;
+    padding: 8px;
+    padding-left: 16px;
+    margin: 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    border: none;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+}
+
+
+.routing-container, .search-container {
+    width: 100%;
+    max-height: 130px;
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 3%;
+    z-index: 2;
+}
+
+
+.routing-container {
+    /* margin-top: 25%; */
+}
+
+.search-container {
+    /* margin-top: 25%; */
+}
+
+
+.search-list {
+    background: #ececec;
+    border-radius: 8px;
+}
+/* .routing-container button {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+} */
+
+.ai-caption {
+    font-size: 14px;
+    color: black;
+    width: 80px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    background: rgb(255, 243, 243);
+}
+
+
+.chat-container {
+    width: 100%;
+    height: 130px;
+    max-height: 130px;
+    min-height: 100px;
+    box-sizing: border-box;
+    /* margin-top: 15%; */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+    overflow-y: scroll;
+    z-index: 1;
+    position: relative;
+    margin-top: 15%;
+}
+
+.chat-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* height: 100%; */
+    padding: 0 20px;
+}
+
+.messages {
+    width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    /* margin-bottom: 10px; */
+    font-size: 14px;
+}
+
+.ai-msg {
+    background: #d1636e;
+}
+
+.user-msg {
+    background: #2978A0;
+    margin-left: 20%;
+}
+
+
+.input-msg-container {
+    display: flex;
+}
+
+#user-input {
+    width: 70%;
+    box-sizing: border-box;
+    height: 40px;
+    padding: 15px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    margin-bottom: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+
+#send-btn {
+    width: 30%;
+    height: 40px;
+    box-sizing: border-box;
+    background: #8B4513;
+    color: white;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+}
+
+#send-btn:hover {
+    background-color: #a75c26;
+}
+
+
+
+
+.dropdown {
+    position: relative;
+    margin-bottom: 10px;
+    z-index: 1;
+    background: #ececec;
+    border-radius: 8px;
+}
+
+.dropdown-btn, .dropdown-btn2 {
+    width: 80%;
+    padding: 10px;
+    background-color: #007bff1f;
+    color: #1a1a1a;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 8px;
+}
+
+
+.dropdown-content, .dropdown-content2 {
+    display: none;
+    padding: 5px;
+    z-index: 2;
+}
+
+
+.dropdown-content div {
+    width: 80%;
+    background-color: #FF5733;
+    padding: 5px;
+    margin: 5px 0;
+    color: #1a1a1a;
+    border-radius: 8px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-content div span {
+    background: white;
+    border-radius: 5px;
+    font-size: 12px;
+    padding: 0 2%;
+}
+
+.dropdown.active .dropdown-content, .dropdown.active .dropdown-content2 {
+    display: block;
+}
+
+
+.dropdown-content {
+    background: white;
+    padding: 3%;
+}
+
+.dropdown-content:hover {
+    background: #f3f3f3e0;
+}
+
+.down-arrow {
+    margin-left: 8px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+
+.maplibregl-ctrl-bottom-right {
+  right: 10px; 
+  bottom: 5px;
+}
+
+.maplibregl-ctrl-attrib {
+  padding-right: 10px;
+  max-width: 100%;
+  overflow: hidden;
+  line-height: 10px;
+} 
+
+
+
+a[href="https://www.maptiler.com/copyright/"], a[href="https://www.openstreetmap.org/copyright"] {
+  display: none;
+}
+
+
+
+@media only screen and (max-width: 800px){
+    .logo-container {
+        display: none;
+    }
+
+
+    section#main {
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    #map, .left-pane {
+        width: 100%;
+        flex-direction: row !important;
+        margin: 0;
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.108);
+    }
+
+    #map {
+        height: 80vh;
+    }
+
+    .left-pane {
+        height: 20vh;
+    }
+
+    
+    .routing-container, .search-container {
+        width: 50%;
+        /* height: 130px; */
+    }
+    
+
+    .search-container {
+        /* margin-top: 10%; */
+    }
+
+
+    .logos-container {
+        margin-bottom: 10px;
+    }
+    .logos-container img {
+        width: 5%;
+    }
+
+    .tab-content.active {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .chat-container {
+        margin-top: 15%;
+        width: 48%;
+        z-index: 1;
+    }
+
+
+}
+
+
+.search-results {
+    overflow-y: scroll;
+}
+
+
+.search-results ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: #f3f3f3;
+    border-radius: 8px;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+    width: 100%;
+    z-index: 2;
+}
+  
+.search-results li {
+    width: 100%;
+    list-style: none;
+    padding: 5px 10px;
+    background: #f3f3f3;
+    margin: 5px 0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.search-results li:hover {
+    background: #e3e3e3;
+}
+
+.popup {
+    /* width: 100%; */
+    border-radius: 8px;
+    color: #1a1a1a;
+    line-height: 1.2;
+    font-size: 10px;
+    padding-bottom: 20px;
+}
+
+.popup h5, .popup i, .popup p {
+    padding: 5px 5px 0;
+    margin: 20px 10px 0px;
+    font-family: "Poppins", sans-serif;
+}
+
+
+.popup i {
+    margin-right: 0;
+    margin-top: 3px;
+}
+
+
+.popup .img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px 8px 0px 0;
+}
+
+
+
+div.maplibregl-popup-content {
+    width: 220px;
+    max-width: 250px;
+    border-radius: 10px;
+    padding: 0;
+}
+
+button.maplibregl-popup-close-button:focus {
+    outline: none;
+    background: white;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+
+.location-button, .weather-button, .weather-widget, .fa-home {
+    position: absolute;
+    bottom: 68px;
+    right: 10px;
+    border-radius: 8px;
+    outline: none;
+    padding: 5px 9px;
+    padding-top: 7px;
+    border: none;
+    color: #1a1a1a;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+    z-index: 2;
+}
+
+.weather-button {
+    bottom: 118px;
+    font-size: 14px;
+}
+
+
+.fa-home {
+    bottom: 168px;
+    font-size: 14px;
+}
+
+
+.weather-widget {
+    bottom: 150px;
+    display: none;
+    background: white;
+    font-size: 14px;
+    padding: 10px;
+    z-index: 2;
+}
+
+.weather-widget.active {
+    display:  block;
+}
+
+@media only screen and (max-width: 620px){
+
+    body {
+        padding: 0%;
+    }
+
+    .left-pane {
+        flex-direction: column;
+        padding: 5px;
+        height: 20%;
+        padding-bottom: 0%;
+    }
+
+    .tab-content.active {
+        flex-direction: column;
+    }
+
+    #map {
+        height: 80%;
+    }
+    
+    .routing-container, .search-container {
+        /* margin-top:15%; */
+        width: 100%;
+        border: none;
+        margin-bottom: 0;
+        box-shadow: 2px 0px 2px 0px rgba(0, 0, 0, 0.108);
+    } 
+
+    .chat-container {
+        position: fixed;
+        bottom: 5%;
+        right: 6%;
+        width: 88%;
+        z-index: 1;
+    }
+
+
+    .logos-container img {
+        width: 12%;
+    }
+}
+
+
+
+
+
+/* For WebKit Browsers (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 2px; /* For horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #fff;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* For Mozilla Firefox */
+* {
+    scrollbar-width: thin;  /* Options: auto, thin, none */
+    scrollbar-color: #fff #f1f1f1; /* thumb color | track color */
+}
+
+.routing-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+
+
+/* Style for the switch container */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;  /* Smaller size */
+    height: 24px; /* Smaller size */
+}
+  
+  /* Hide the default checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+  /* Style for the slider (the switch part) */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 24px;  /* Adjusted for smaller size */
+    z-index: 2;
+}
+  
+  /* Style for the circle inside the slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* Even smaller size */
+    width: 16px;  /* Even smaller size */
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+
+.slider-earth {
+    background: none;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+}
+
+.slider-earth:before, .slider-dim::before {
+    position: absolute;
+    content: "🌍"; /* Earth emoji */
+    font-size: 16px; /* Adjust size of the emoji */
+    text-align: center;
+    line-height: 16px;
+    height: 16px; /* Even smaller size */
+    width: 16px;  /* Even smaller size */
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+    left: 4px;
+    bottom: 5px;
+    transition: 0.4s;
+}
+
+
+.slider-dim::before {
+    position: absolute;
+    color: white;
+    content: "2d";
+    background: #1a1a1a;
+    font-size: 10px;
+    font-weight: bold;
+    height: 20px;
+    width: 20px;
+    padding-top: 2px;
+    transform: translateY(1px);
+}
+
+.slider-dim {
+    background-color: #fff;
+    height: 28px;
+    width: 40px;
+}
+
+  /* When the checkbox (input) is checked, move the slider */
+input:checked + .slider {
+    background-color: #2978A0; /* Green color when ON */
+}
+
+input:checked + .slider-dim {
+    background-color: #fff;
+    height: 28px;
+    width: 40px;
+}
+
+input:checked + .slider-earth {
+    background-color: #fff;
+    border: 0.1px solid #1a1a1ad0; /* Green color when ON */
+}
+
+
+/* Move the circle when the checkbox is checked */
+input:checked + .slider:before {
+    transform: translateX(11px); /* Adjusted to fit the smaller size */
+}
+
+input:checked + .slider-dim::before {
+    transform: translate(11px, 1px);
+    color: white;
+    content: "3d";
+}
+
+.dimension-switch {
+    height: 28px;
+    width: 40px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 18px;
+    right: 8px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+}
+
+.blinking-marker {
+    position: relative; /* Needed for absolute positioning of inner-marker */
+    background: #d32f2f80; /* Outer circle */
+    width: 25px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: blink 1s infinite; /* Apply blinking only to outer marker */
+    border-radius: 50%;
+    border: none;
+}
+
+.inner-marker {
+    position: absolute;
+    width: 15px;
+    height: 5px;
+    background: #b92a2a;
+    border-radius: 50%;
+    transform: translate(1%, -28%); /* Adjust position as needed */
+}
+ 
+@keyframes blink {
+    0% { background: rgba(211, 47, 47, 0.5); }
+    50% { background: transparent; }
+    100% { background: rgba(211, 47, 47, 0.5); }
+}
+
+
+
+
+/* Map container */
+#map { 
+    position: relative; /* Make sure map container is positioned relative */
+}
+
+/* Fancy info box inside the map */
+.info-box {
+    max-width: 80%;
+    text-align: center;
+    line-height: 1.2;
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.108);
+    color: #000;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 600px){
+    .info-box {
+        font-size: 12px;
+        padding: 5px;
+    }
+
+    .maplibregl-ctrl-attrib-inner {
+        font-size: 9px;
+    }
+}
+
+
+/* Drop-in animation */
+@keyframes dropIn {
+    0% {
+        transform: translateX(-50%) translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(20px);
+        opacity: 1;
+    }
+}
+
