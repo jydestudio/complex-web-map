@@ -277,11 +277,15 @@ function removeAllLayers(allLayerNames) {
 
 
 document.querySelector(".fa-home").addEventListener("click", function (){
+
+    const currentBearing = map.getBearing();
+    
     map.flyTo({
         center: [3.369845301, 7.120289751],
         zoom: 19,
         pitch: 60,
     });
+    const newBearing = currentBearing + 90;
 
     map.once("moveend", ()=>{
         removeAllLayers(layerNames);
@@ -292,7 +296,24 @@ document.querySelector(".fa-home").addEventListener("click", function (){
         pop.remove()
     }
 
+    pop = new maplibregl.Popup({ closeOnClick: true, closeButton: false, offset: [40, -300], anchor: 'left',})
+    .setLngLat(end)
+    .setHTML(`
+        <div class="popup" style="font-size: 12px;">
+            <div style="width: 100%; height: 120px; border-radius: 8px 8px 0 0; background: url('assets/images/GIS BUILDING BUREAU OF LANDS AND SURVEY.jpg'); background-size: cover;"></div>
+            <h5>GIS BUILDING BUREAU OF LANDS AND SURVEY</h5>
+        </div>`) // Tooltip content
+    .addTo(map)
 
+
+    map.flyTo({
+        center: end,
+        bearing: newBearing, // Pass the new calculated bearing here
+        zoom: 19,
+        speed: 5,
+        curve: 1,
+        essential: true
+    });
 })
 
 locationButton.addEventListener('click', () => {
@@ -502,7 +523,17 @@ map.on('load', () => {
     }
     });
 
+
     addBuildingExtrusion();
+
+    pop = new maplibregl.Popup({ closeOnClick: true, closeButton: false, offset: [40, -300], anchor: 'left',})
+    .setLngLat(end)
+    .setHTML(`
+        <div class="popup" style="font-size: 12px;">
+            <div style="width: 100%; height: 120px; border-radius: 8px 8px 0 0; background: url('assets/images/GIS BUILDING BUREAU OF LANDS AND SURVEY.jpg'); background-size: cover;"></div>
+            <h5>GIS BUILDING BUREAU OF LANDS AND SURVEY</h5>
+        </div>`) // Tooltip content
+    .addTo(map)
 
 
 });
@@ -721,7 +752,7 @@ function addFilteredData(feature){
         .setLngLat([longitude, latitude])
         .setHTML(`
             <div class="popup" style="font-size: 12px;">
-                <img style="width: 100%; height: 100px; border-radius: 8px 8px 0 0;" src="${feature.properties.img}">
+            <div style="width: 100%; height: 120px; border-radius: 8px 8px 0 0; background: url('${feature.properties.img}'); background-size: cover;"></div>
                 <h5>${feature.properties["name"]}</h5>
                 <p>The office is located at the top floor, please use the stairway to get upstairs.</p>
             </div>`) // Tooltip content
@@ -731,7 +762,7 @@ function addFilteredData(feature){
         .setLngLat([longitude, latitude])
         .setHTML(`
             <div class="popup" style="font-size: 12px;">
-                <img style="width: 100%; height: 100px; border-radius: 8px 8px 0 0;" src="${feature.properties.img}">
+            <div style="width: 100%; height: 120px; border-radius: 8px 8px 0 0; background: url('${feature.properties.img}'); background-size: cover;"></div>
                 <h5>${feature.properties["name"]}</h5>
                 <p>The office is located on the ground floor, there is no need to use the stairway.</p>
             </div>`) // Tooltip content
